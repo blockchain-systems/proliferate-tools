@@ -43,11 +43,14 @@ case "$C" in
 "Arch Linux")
     COUCHINSTALL = "pacman -S couchdb"
     ;;
-"2" | "3")
-    echo "..."
+"Ubuntu")
+    COUCHINSTALL = "apt-get install couchdb"
+    ;;
+"FreeBSD")
+    COUCHINSTALL = "pkg install couchdb2"
     ;;
 *)
-    echo "..."
+    echo ""
     ;;
 esac
 
