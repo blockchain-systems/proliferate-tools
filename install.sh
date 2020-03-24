@@ -48,16 +48,16 @@ case "$OS" in
     IPS=`ip address show | grep 'inet ' | awk -F '/' '{print $1}' | awk '{print "    " $2}'`
     SUPPORTED=1
     ;;
-"Ubuntu" | "Manjaro Linux")
+"Ubuntu" | "Linux Mint")
     COUCHINSTALL="apt-get install couchdb"
     CURLNSTALL="apt-get install curl"
-    LISTIPS=`ifconfig | grep 'inet addr' | awk  '{print $2}' | awk -F ':' '{print "    " $2}'`
+    IPS=`ifconfig | grep 'inet addr' | awk  '{print $2}' | awk -F ':' '{print "    " $2}'`
     SUPPORTED=1
     ;;
 "FreeBSD")
     COUCHINSTALL="pkg install couchdb2"
     CURLINSTALL="pkg install curl"
-    LISTIPS=`ifconfig | grep 'inet ' | awk '{print "    " $2}'`
+    IPS=`ifconfig | grep 'inet ' | awk '{print "    " $2}'`
     SUPPORTED=1
     ;;
 *)
